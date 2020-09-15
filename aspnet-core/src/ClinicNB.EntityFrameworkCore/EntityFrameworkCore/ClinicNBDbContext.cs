@@ -21,5 +21,11 @@ namespace ClinicNB.EntityFrameworkCore
         public DbSet<UserInfo> UserInfo { get; set; }
         public DbSet<PinInfo> PinInfo { get; set; }
         public DbSet<MestInfo> MestInfo { get; set; }
+        public DbSet<DeptInfo> DeptInfo { get; set; }
+        public DbSet<EjrInfo> EjrInfo { get; set; }
+        public DbSet<EmployInfo> EmployInfo { get; set; }
+        public DbSet<EmployJob> EmployJob { get; set; }
+        public DbSet<EmployRole> EmployRole { get; set; }
+        public DbSet<JobInfo> JobInfo { get; set; }
     }
 }
