@@ -3,6 +3,7 @@ using Abp.Zero.EntityFrameworkCore;
 using ClinicNB.Authorization.Roles;
 using ClinicNB.Authorization.Users;
 using ClinicNB.MultiTenancy;
+using ClinicNB.Entitys;
 
 namespace ClinicNB.EntityFrameworkCore
 {
@@ -14,5 +15,6 @@ namespace ClinicNB.EntityFrameworkCore
             : base(options)
         {
         }
+        public DbSet<AA> AA { get; set; }
     }
 }
