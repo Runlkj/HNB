@@ -16,5 +16,8 @@ namespace ClinicNB.EntityFrameworkCore
         {
         }
         public DbSet<AA> AA { get; set; }
+        public DbSet<JobInfo> JobInfo { get; set; }
+        public DbSet<JobRole> JobRole { get; set; }
+        public DbSet<RoleInfo> RoleInfo { get; set; }
     }
 }
