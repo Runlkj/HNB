@@ -16,5 +16,8 @@ namespace ClinicNB.EntityFrameworkCore
         {
         }
         public DbSet<AA> AA { get; set; }
+        public DbSet<yaoPinRuku> yaoPinRuku { get; set; }
+        public DbSet<yaoType> yaoType { get; set; }
+        public DbSet<yaoPinKuCun> yaoPinKuCun { get; set; }
     }
 }
