@@ -4,14 +4,16 @@ using ClinicNB.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ClinicNB.Migrations
 {
     [DbContext(typeof(ClinicNBDbContext))]
-    partial class ClinicNBDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200915072612_DB3.2")]
+    partial class DB32
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1656,18 +1658,15 @@ namespace ClinicNB.Migrations
                     b.ToTable("DeptInfo");
                 });
 
-            modelBuilder.Entity("ClinicNB.Entitys.GetMoney", b =>
+            modelBuilder.Entity("ClinicNB.Entitys.EjrInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Code")
+                    b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreateTime")
-                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
@@ -1675,13 +1674,40 @@ namespace ClinicNB.Migrations
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("GetMoneyTypeId")
+                    b.Property<int>("Eage")
                         .HasColumnType("int");
 
-                    b.Property<int>("GetQian")
+                    b.Property<int>("Eid")
                         .HasColumnType("int");
 
-                    b.Property<int>("GetTypeId")
+                    b.Property<string>("Ename")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Eperson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Epno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Esex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Estate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Etel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Etime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ezs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("JobName")
                         .HasColumnType("int");
 
                     b.Property<DateTime?>("LastModificationTime")
@@ -1690,23 +1716,32 @@ namespace ClinicNB.Migrations
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<int>("OfficeInfoId")
+                    b.Property<string>("LoginName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pwd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Rid")
                         .HasColumnType("int");
 
-                    b.Property<int>("RegInfoId")
+                    b.Property<int>("Rname")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.ToTable("GetMoney");
+                    b.ToTable("EjrInfo");
                 });
 
-            modelBuilder.Entity("ClinicNB.Entitys.JobInfo", b =>
+            modelBuilder.Entity("ClinicNB.Entitys.EmployInfo", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
@@ -1714,8 +1749,38 @@ namespace ClinicNB.Migrations
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
 
-                    b.Property<string>("JobName")
+                    b.Property<int>("DeptId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Eage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ename")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Eperson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Epno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Esex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Estate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Etel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Etime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ezs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("JobId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("LastModificationTime")
                         .HasColumnType("datetime2");
@@ -1723,23 +1788,65 @@ namespace ClinicNB.Migrations
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("LoginName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pwd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("RoleId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.ToTable("JobInfo");
+                    b.ToTable("EmployInfo");
                 });
 
-            modelBuilder.Entity("ClinicNB.Entitys.JobRole", b =>
+            modelBuilder.Entity("ClinicNB.Entitys.EmployJob", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreationTime")
                         .HasColumnType("datetime2");
 
                     b.Property<long?>("CreatorUserId")
                         .HasColumnType("bigint");
+
+                    b.Property<int>("Eage")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Eid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ename")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Eperson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Epno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Esex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Estate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Etel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Etime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ezs")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("JobId")
                         .HasColumnType("int");
@@ -1753,6 +1860,75 @@ namespace ClinicNB.Migrations
                     b.Property<long?>("LastModifierUserId")
                         .HasColumnType("bigint");
 
+                    b.Property<string>("LoginName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pwd")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EmployJob");
+                });
+
+            modelBuilder.Entity("ClinicNB.Entitys.EmployRole", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("CreatorUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<int>("Eage")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Eid")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Ename")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Eperson")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Epno")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Esex")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Estate")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Etel")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Etime")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ezs")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModificationTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<long?>("LastModifierUserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("LoginName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pwd")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Rid")
                         .HasColumnType("int");
 
@@ -1761,7 +1937,7 @@ namespace ClinicNB.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("JobRole");
+                    b.ToTable("EmployRole");
                 });
 
             modelBuilder.Entity("ClinicNB.Entitys.MestInfo", b =>
@@ -1806,33 +1982,6 @@ namespace ClinicNB.Migrations
                     b.ToTable("MestInfo");
                 });
 
-            modelBuilder.Entity("ClinicNB.Entitys.OrderType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("CreatorUserId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("LastModifierUserId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OrderType");
-                });
-
             modelBuilder.Entity("ClinicNB.Entitys.PinInfo", b =>
                 {
                     b.Property<int>("Id")
@@ -1859,33 +2008,6 @@ namespace ClinicNB.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("PinInfo");
-                });
-
-            modelBuilder.Entity("ClinicNB.Entitys.RoleInfo", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("CreationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("CreatorUserId")
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("LastModificationTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<long?>("LastModifierUserId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("Rname")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RoleInfo");
                 });
 
             modelBuilder.Entity("ClinicNB.Entitys.UserInfo", b =>
