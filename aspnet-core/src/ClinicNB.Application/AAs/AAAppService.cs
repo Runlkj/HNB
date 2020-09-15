@@ -17,11 +17,10 @@ namespace ClinicNB.AAs
         CreateUpdateAADto
         >,IAAAppService
     {
-        public AAAppService(IRepository<AA, int> repository): base(repository)
+        public AAAppService(IRepository<AA, int> ss): base(ss)
         {
 
         }
-
         public override AADto Create(CreateUpdateAADto input)
         {
             return base.Create(input);

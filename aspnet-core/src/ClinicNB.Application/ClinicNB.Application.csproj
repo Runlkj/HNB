@@ -13,4 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ClinicNB.Core\ClinicNB.Core.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="All\BBs\" />
+  </ItemGroup>
 </Project>
